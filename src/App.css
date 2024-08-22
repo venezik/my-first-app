@@ -1,0 +1,68 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.color-picker {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.color-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.color-item {
+  width: 100px;
+  height: 100px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  text-align: center;
+  position: relative;
+}
+
+.color-item.focused {
+  border-color: white;
+}
+
+.color-item:hover, .color-item:focus {
+  outline: none;
+  border-color: white;
+}
+
+.color-code {
+  font-size: 14px;
+  text-shadow: 1px 1px 2px black, 0 0 1px black; /* Black outline for text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text */
+  display: none; /* Initially hidden */
+}
+
+.color-item.focused .color-code,
+.color-item:hover .color-code,
+.color-item:focus .color-code {
+  display: block; /* Show text when focused, hovered, or clicked */
+}
+
+.color-list .color-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
